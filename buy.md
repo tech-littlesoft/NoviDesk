@@ -1,10 +1,11 @@
 ---
 layout: default
-title: 订购与购买 · Pricing & Buy
+title: 升级 Pro · Upgrade to Pro
 permalink: /buy/
+toc: true
 ---
 
-# 订购说明 <span class="en">Pricing &amp; Purchase</span>
+# 升级 Pro <span class="en">Upgrade to Pro · Pricing &amp; Purchase</span>
 
 <p class="lead">NoviDesk 基础功能完全免费；Pro 通过<b>离线激活码</b>开启，不连接任何服务器，不上传任何硬件信息。</p>
 
@@ -36,7 +37,7 @@ permalink: /buy/
 <p class="zh">激活验证<b>完全离线</b>：本机通过数字签名校验激活码有效性，不连接任何远程服务器，不上传硬件信息、机器指纹或任何遥测数据。激活状态仅保存在本机 <code>%AppData%\NoviDesk\license.dat</code>。</p>
 <p class="en">Activation is <b>fully offline</b>: the code is verified locally by digital signature. No remote server is contacted, no hardware info or fingerprint is uploaded, no telemetry. Activation state lives only at <code>%AppData%\NoviDesk\license.dat</code>.</p>
 
-<p class="zh">详情见 <a href="https://github.com/tech-littlesoft/NoviDesk-Privacy" target="_blank" rel="noopener">隐私说明</a> 第 5 节"授权与激活"。</p>
+<p class="zh">详情见 <a href="{{ '/privacy/' | relative_url }}">隐私说明</a> 第 5 节"授权与激活"。</p>
 
 ## 5. 退款与售后 <span class="en">Refunds &amp; Support</span>
 
@@ -63,4 +64,4 @@ permalink: /buy/
   </li>
 </ul>
 
-<p class="en">Back to <a href="/">Overview</a> · <a href="/guide/">User Guide</a></p>
+<p class="en">Back to <a href="{{ '/' | relative_url }}">Overview</a> · <a href="{{ '/guide/' | relative_url }}">User Guide</a></p>

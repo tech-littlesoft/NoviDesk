@@ -29,17 +29,79 @@
     <a class="topbar-cta" href="{{ '/buy/' | relative_url }}">获取 Pro</a>
   </header>
 
-  <div class="layout">
+  <div class="layout{% if page.toc %} has-toc{% endif %}">
     <aside class="sidebar" aria-label="文档导航">
       {% include sidebar.html %}
     </aside>
+
     <main class="page">
       {{ content }}
     </main>
+
+    {% if page.toc %}
+    <aside class="toc" aria-label="本页目录">
+      <div class="toc-inner">
+        <div class="toc-title">本页目录</div>
+        <nav id="toc"></nav>
+      </div>
+    </aside>
+    {% endif %}
   </div>
 
   <footer class="site-footer">
-    <p>© {{ site.time | date: '%Y' }} NoviDesk · 悬浮桌面 / 小维桌面 · <a href="https://github.com/tech-littlesoft/NoviDesk-Docs" target="_blank" rel="noopener">GitHub</a></p>
+    <p>© {{ site.time | date: '%Y' }} NoviDesk · 悬浮桌面 / 小维桌面 · <a href="https://github.com/tech-littlesoft/NoviDesk" target="_blank" rel="noopener">GitHub</a></p>
   </footer>
+
+{% if page.toc %}
+  <script>
+  (function () {
+    var page = document.querySelector('.page');
+    var toc = document.getElementById('toc');
+    if (!page || !toc) return;
+
+    var heads = page.querySelectorAll('h2, h3');
+    if (!heads.length) {
+      var box = toc.closest('.toc');
+      if (box) box.style.display = 'none';
+      return;
+    }
+
+    var list = document.createElement('ul'), nodes = [];
+    Array.prototype.forEach.call(heads, function (h, i) {
+      if (!h.id) {
+        var s = (h.textContent || '').trim().toLowerCase()
+          .replace(/[^\w\u4e00-\u9fa5]+/g, '-').replace(/^-+|-+$/g, '');
+        h.id = s || ('sec-' + (i + 1));
+      }
+      var li = document.createElement('li');
+      li.className = 'toc-' + h.tagName.toLowerCase();
+
+      var a = document.createElement('a');
+      a.setAttribute('href', location.pathname + '#' + h.id);
+
+      var en = h.querySelector('span.en');
+      a.textContent = (h.textContent || '').replace(en ? en.textContent : '', '').replace(/\s+/g, ' ').trim();
+
+      li.appendChild(a);
+      list.appendChild(li);
+      nodes.push(h);
+    });
+    toc.appendChild(list);
+
+    var links = toc.querySelectorAll('a');
+    if (!('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var idx = nodes.indexOf(e.target);
+        Array.prototype.forEach.call(links, function (l, j) {
+          l.className = (j === idx) ? 'active' : '';
+        });
+      });
+    }, { rootMargin: '-84px 0px -72% 0px' });
+    nodes.forEach(function (h) { io.observe(h); });
+  })();
+  </script>
+{% endif %}
 </body>
 </html>

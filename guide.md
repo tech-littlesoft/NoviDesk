@@ -2,6 +2,7 @@
 layout: default
 title: 用户操作指南 · User Guide
 permalink: /guide/
+toc: true
 ---
 
 # 用户操作指南 <span class="en">User Guide · Get Started in 5 Minutes</span>
@@ -63,9 +64,9 @@ permalink: /guide/
   </li>
   <li>
     <b>离线激活 Pro</b>
-    <p class="zh">Pro 通过离线激活码开启，不连接任何服务器，详见 <a href="/buy/">订购说明</a>。</p>
-    <p class="en">Pro unlocks via offline activation code — no server contact. See <a href="/buy/">Pricing &amp; Buy</a>.</p>
+    <p class="zh">Pro 通过离线激活码开启，不连接任何服务器，详见 <a href="{{ '/buy/' | relative_url }}">升级 Pro</a>。</p>
+    <p class="en">Pro unlocks via offline activation code — no server contact. See <a href="{{ '/buy/' | relative_url }}">Upgrade to Pro</a>.</p>
   </li>
 </ul>
 
-<p class="en">See the <a href="/">Overview</a> for the full feature walkthrough, or jump to <a href="/buy/">Pricing &amp; Buy</a>.</p>
+<p class="en">See the <a href="{{ '/' | relative_url }}">Overview</a> for the full feature walkthrough, or jump to <a href="{{ '/buy/' | relative_url }}">Upgrade to Pro</a>.</p>
