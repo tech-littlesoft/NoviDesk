@@ -9,7 +9,7 @@
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/img/favicon.svg' | relative_url }}" />
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
 </head>
-<body>
+<body{% if page.wide %} class="wide-page"{% endif %}>
   <header class="topbar">
     <a class="brand" href="{{ '/' | relative_url }}" aria-label="NoviDesk 主页">
       <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true">
@@ -29,7 +29,7 @@
     <a class="topbar-cta" href="{{ '/buy/' | relative_url }}">获取 Pro</a>
   </header>
 
-  <div class="layout{% if page.toc %} has-toc{% endif %}">
+  <div class="layout{% if page.toc %} has-toc{% endif %}{% if page.wide %} is-wide{% endif %}">
     <aside class="sidebar" aria-label="文档导航">
       {% include sidebar.html %}
     </aside>
