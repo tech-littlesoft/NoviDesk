@@ -134,3 +134,35 @@ figcaption { font-size:13px; color:var(--muted); margin-top:8px; text-align:cent
   a { color:#000; text-decoration:underline; }
   figure img, figure svg { border:none; }
 }
+
+/* ===== Buy page: pricing cards ===== */
+.pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:18px 0 24px; }
+.pricing-card { position:relative; padding:22px 18px 18px; border:1px solid var(--line); border-radius:12px; background:var(--card); display:flex; flex-direction:column; text-align:center; }
+.pricing-card.highlight { border-color:var(--brand); box-shadow:0 2px 14px rgba(43,108,176,0.10); }
+.pricing-card .badge { position:absolute; top:-10px; left:50%; transform:translateX(-50%); background:var(--brand); color:#fff; font-size:11px; font-weight:700; padding:3px 12px; border-radius:10px; letter-spacing:.5px; }
+.pricing-card h3 { margin:0 0 4px; font-size:16px; color:var(--ink); font-weight:700; }
+.pricing-card .period { margin:0 0 16px; font-size:13px; color:var(--muted); }
+.pricing-card .features { list-style:none; padding:0; margin:0 0 18px; font-size:13px; color:var(--ink); text-align:left; flex:1; }
+.pricing-card .features li { padding:7px 0; border-bottom:1px dashed var(--line); position:relative; padding-left:20px; }
+.pricing-card .features li:last-child { border-bottom:none; }
+.pricing-card .features li::before { content:"✓"; position:absolute; left:0; top:7px; color:#7c5cff; font-weight:700; font-size:14px; }
+.pricing-card .btn { display:inline-block; padding:8px 26px; border-radius:6px; background:#fff; color:var(--ink); font-size:13px; font-weight:600; border:1px solid var(--line); margin-top:auto; user-select:none; }
+.pricing-card.highlight .btn { background:var(--brand); color:#fff; border-color:var(--brand); }
+.pricing-card .btn-current { display:inline-block; padding:8px 22px; border-radius:6px; background:var(--bg); color:var(--muted); font-size:12px; font-weight:600; border:1px dashed var(--line); margin-top:auto; }
+
+@media (max-width:760px){
+  .pricing-grid { grid-template-columns:1fr; gap:14px; }
+}
+
+/* ===== Steps list (buy page activation flow) ===== */
+ol.steps { counter-reset:step; list-style:none; padding:0; margin:14px 0 6px; }
+ol.steps > li { counter-increment:step; position:relative; padding:10px 12px 10px 44px; margin:8px 0; border:1px solid var(--line); border-radius:8px; background:var(--card); font-size:14px; line-height:1.7; }
+ol.steps > li::before { content:counter(step); position:absolute; left:12px; top:11px; width:22px; height:22px; border-radius:50%; background:var(--brand); color:#fff; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+.kbd { display:inline-block; padding:1px 8px; border:1px solid var(--line); border-radius:4px; background:var(--bg); color:var(--ink); font-size:12px; font-family:Consolas,Menlo,monospace; }
+
+/* Dark mode adjustments for pricing cards */
+@media (prefers-color-scheme: dark) {
+  .pricing-card .btn { background:#1a1a1a; color:var(--ink); border-color:var(--line); }
+  .pricing-card .features li { border-bottom-color:#333; }
+  ol.steps > li { background:#1a1a1a; }
+}
