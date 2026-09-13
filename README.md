@@ -1,101 +1,107 @@
-# NoviDesk 官方文档工程
+# NoviDesk Docs
 
-本目录是一个**标准 GitHub Pages（Jekyll）文档工程**，用于发布 NoviDesk 桌面工作站的官方文档。
-结构参考同组织的 `NoviDesk-Privacy` 仓库（独立仓库、`main` 分支、仓库根目录即 Pages 源）。
+Source of the official NoviDesk documentation site, built with Jekyll and served by GitHub Pages.
 
-## 站点结构（4 页 + 侧边栏导航）
+No third-party theme, no CSS framework, no CDN — the entire site is a few Markdown files plus one stylesheet, so it loads fast and stays reachable from mainland China.
+
+## Live site
+
+| Page | URL |
+| --- | --- |
+| Overview | https://tech-littlesoft.github.io/NoviDesk/ |
+| User Guide | https://tech-littlesoft.github.io/NoviDesk/guide/ |
+| Upgrade to Pro | https://tech-littlesoft.github.io/NoviDesk/buy/ |
+| Privacy Policy | https://tech-littlesoft.github.io/NoviDesk/privacy/ |
+
+Every page is independently addressable. The left sidebar highlights the current page; the right rail generates an on-page table of contents and tracks scroll position.
+
+## Layout
 
 ```
-Docs/Docs/
-├── _config.yml              # Jekyll / GitHub Pages 配置（permalink: pretty）
+.
+├── _config.yml            # Jekyll / GitHub Pages settings
 ├── _layouts/
-│   └── default.html         # 页面骨架：顶部 logo 栏 + 侧边栏 + 内容 + 右侧目录 + 页脚
+│   └── default.html       # Top bar, sidebar, content, TOC rail, footer, TOC script
 ├── _includes/
-│   └── sidebar.html         # 左侧文档导航（主页 / 指南 / 升级 Pro / 隐私）
+│   └── sidebar.html       # Left navigation
 ├── assets/
-│   ├── css/
-│   │   └── style.css         # 顶部 logo + 侧边栏 + 目录 + 正文 + 响应式 + 暗色 + 打印
-│   └── img/
-│       ├── 0X-*.svg          # 各节插图（矢量，可直接替换为真实截图 .png/.jpg）
-│       ├── tip*.gif
-│       └── favicon.svg       # 品牌 3×3 标记
-├── index.md                 # 1) 产品主页           （/）
-├── guide.md                 # 2) 用户操作指南       （/guide/）
-├── buy.md                   # 3) 升级 Pro           （/buy/）
-├── privacy.md               # 4) 隐私说明           （/privacy/）
-└── README.md               # 本说明
+│   ├── css/style.css      # All styles: layout, typography, dark mode, print
+│   └── img/               # Illustrations (.svg) and demo clips (.gif)
+├── index.md               # Overview          ->  /
+├── guide.md               # User Guide        ->  /guide/
+├── buy.md                 # Upgrade to Pro    ->  /buy/
+├── privacy.md             # Privacy Policy    ->  /privacy/
+└── README.md
 ```
 
-## 访问 URL
+## Editing
 
-| 页面 | URL |
-|---|---|
-| 产品主页 | `https://tech-littlesoft.github.io/NoviDesk/` |
-| 用户操作指南 | `https://tech-littlesoft.github.io/NoviDesk/guide/` |
-| 升级 Pro | `https://tech-littlesoft.github.io/NoviDesk/buy/` |
-| 隐私说明 | `https://tech-littlesoft.github.io/NoviDesk/privacy/` |
+| I want to change | Edit this |
+| --- | --- |
+| Page copy | `index.md` / `guide.md` / `buy.md` / `privacy.md` |
+| Left navigation | `_includes/sidebar.html` |
+| Header, footer, TOC behavior | `_layouts/default.html` |
+| Styles, colors, spacing | `assets/css/style.css` |
+| Illustrations | Replace files under `assets/img/` (`.png` / `.jpg` work too) |
+| Site title, description, baseurl | `_config.yml` |
 
-每页都可独立访问；左侧导航自动高亮当前页，右侧目录自动生成并跟随滚动高亮。
+Bilingual pages use two helper classes: `.zh` for the Chinese line, `.en` for the English line beneath it.
 
-## 如何编辑（便于修改）
+The on-page table of contents is opt-in. Add `toc: true` to a page's front matter to enable it; omit it and the right rail disappears.
 
-- **改文字**：分别编辑 `index.md` / `guide.md` / `buy.md` / `privacy.md`，按 Markdown 书写；中英文分别用 `.zh` / `.en` 样式类包裹。
-- **换插图**：把 `assets/img/` 下对应 `.svg` 换成真实截图（同名 `.png`/`.jpg` 亦可）。
-- **改导航**：编辑 `_includes/sidebar.html`。
-- **开关右侧目录**：在页面 front matter 加 `toc: true` 即出现「本页目录」，不加则不显示。
-- **调样式**：改 `assets/css/style.css`。
-- **换 logo**：在 `_layouts/default.html` 中替换内联 `<svg class="brand-mark">`；或放一个 SVG 到 `assets/img/wordmark.svg` 后用 `<img>` 引用。
+## Two conventions you must follow
 
-## 两条必须遵守的路径约定
+**1. Static assets use relative paths.**
 
-1. **图片等静态资源用相对路径**，如 `assets/img/01-float.svg`。
-   `_layouts/default.html` 里的 `<base href="{{ site.baseurl }}/">` 会让它自动解析到仓库根，任何页面、任何子目录都不需要改。
-2. **站内链接必须用 Liquid 过滤器**：`<a href="{{ '/buy/' | relative_url }}">`。
-   ⚠️ 不要写 `href="/buy/"` —— 因为 `<base>` 的存在，以 `/` 开头会被解析到**域名根**（`.../buy/` → 404）。
+```html
+<img src="assets/img/01-float.svg">
+```
 
-## 关于 permalink 命名
+`_layouts/default.html` declares `<base href="{{ site.baseurl }}/">`, which resolves these against the repository root on every page, at any depth. No paths need updating when a page moves.
 
-- 每页的 URL 后缀由 front matter 中的 `permalink:` 决定，例如 `permalink: /privacy/` 让 `privacy.md` 输出为 `/privacy/`。
-- 注意：GitHub Pages 的**第一段路径是仓库名**，无法用 permalink 改写。要让 `buy` 成为顶级 URL `https://tech-littlesoft.github.io/NoviDesk-buy/`，需要新建独立仓库 `NoviDesk-buy`。
-- 当前架构为**单仓库 4 页**（NoviDesk），便于共用侧边栏与样式。
+**2. Internal links must go through `relative_url`.**
 
-## 绑定自有域名后要做的事
+```liquid
+<a href="{{ '/buy/' | relative_url }}">Upgrade to Pro</a>
+```
 
-1. 仓库 Settings → Pages → Custom domain 填域名（如 `novidesk.com`），勾选 Enforce HTTPS
-2. 仓库根目录新增 `CNAME` 文件，内容为该域名
-3. `_config.yml` 改为：
-   ```yaml
-   url: https://novidesk.com
-   baseurl: ""
-   ```
-   由于布局用的是 `relative_url` 与 `<base href>`，改这两行后全站链接、CSS、图片自动跟随，其余文件不用动。
+Do not write `href="/buy/"`. Because of the `<base>` tag above, a leading `/` resolves against the domain root and 404s (`.../buy/` instead of `.../NoviDesk/buy/`).
 
-## 如何发布到 GitHub Pages
+## Deployment
+
+Pushing to `main` is the entire release process — GitHub Pages builds the site server-side.
 
 ```bash
-# 1) 在本目录初始化仓库（若尚未初始化）
-git init -b main
 git add .
-git commit -m "Add NoviDesk docs site (4 pages with sidebar)"
-
-# 2) 关联远程仓库（github.com-techlittlesoft 为 ~/.ssh/config 中的主机别名）
-git remote add origin git@github.com-techlittlesoft:tech-littlesoft/NoviDesk.git
-
-# 3) 推送 main 分支，GitHub Pages 自动构建发布
-git push -u origin main
+git commit -m "Update docs"
+git push origin main
 ```
 
-> 仓库设置 → Pages → Source 选择 **main 分支 / root** 即可。
-> 无需本地安装 Jekyll：GitHub 会在服务端自动用 `_config.yml` 构建。
+Configure Pages once under **Settings → Pages → Source: `main` / `/ (root)`**.
 
-## 本地预览（可选）
+## Local preview
 
-GitHub Pages 是服务端构建，**本地不需要编译**。若要本地实时预览，安装 Ruby + Jekyll 后在本目录执行：
+Not required. GitHub builds the site remotely and there is nothing to compile.
+
+To preview changes locally, install Ruby with Jekyll and run:
 
 ```bash
-bundle init        # 生成 Gemfile 后加入 gem "github-pages", group: :jekyll_plugins
+bundle init      # then add: gem "github-pages", group: :jekyll_plugins
 bundle install
 bundle exec jekyll serve --livereload
 ```
 
-然后访问 **http://127.0.0.1:4000/NoviDesk/**（`/NoviDesk/` 前缀来自 `baseurl`，不能省）。
+Open http://127.0.0.1:4000/NoviDesk/ — the `/NoviDesk/` prefix comes from `baseurl` and cannot be omitted.
+
+## Custom domain
+
+1. Add your domain under **Settings → Pages → Custom domain** and enable Enforce HTTPS.
+2. Commit a `CNAME` file at the repository root containing the bare domain.
+3. Update `_config.yml`:
+
+```yaml
+url: https://novidesk.com
+baseurl: ""
+```
+
+Nothing else changes — links, stylesheets, and images follow automatically.
