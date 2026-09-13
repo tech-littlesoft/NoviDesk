@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" font-family="-apple-system,Segoe UI,Microsoft YaHei,sans-serif">
+  <rect width="800" height="360" fill="#f7fafc"/>
+  <rect x="60" y="40" width="680" height="280" rx="14" fill="#fff" stroke="#cbd5e0" stroke-width="2"/>
+  <rect x="60" y="40" width="680" height="42" rx="14" fill="#edf2f7"/>
+  <rect x="60" y="68" width="680" height="14" fill="#edf2f7"/>
+  <text x="78" y="67" font-size="14" fill="#4a5568">文档 › 项目 › 设计</text>
+  <!-- divider -->
+  <line x1="287" y1="82" x2="287" y2="320" stroke="#cbd5e0" stroke-width="2"/>
+  <!-- left list -->
+  <rect x="78" y="100" width="180" height="26" rx="6" fill="#ebf4ff"/>
+  <rect x="78" y="138" width="180" height="26" rx="6" fill="#f1f5f9"/>
+  <rect x="78" y="176" width="180" height="26" rx="6" fill="#f1f5f9"/>
+  <rect x="78" y="214" width="180" height="26" rx="6" fill="#f1f5f9"/>
+  <rect x="78" y="252" width="180" height="26" rx="6" fill="#f1f5f9"/>
+  <text x="78" y="306" font-size="12" fill="#718096">点击左侧区域退出分屏</text>
+  <!-- right preview -->
+  <rect x="307" y="100" width="410" height="206" rx="10" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <rect x="330" y="124" width="160" height="120" rx="8" fill="#cbd5e0"/>
+  <rect x="510" y="124" width="180" height="14" rx="7" fill="#2d3748"/>
+  <rect x="510" y="150" width="180" height="10" rx="5" fill="#cbd5e0"/>
+  <rect x="510" y="170" width="140" height="10" rx="5" fill="#cbd5e0"/>
+  <rect x="330" y="260" width="370" height="10" rx="5" fill="#e2e8f0"/>
+  <text x="400" y="34" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="700">双击文件夹名 → 左右分屏</text>
+</svg>

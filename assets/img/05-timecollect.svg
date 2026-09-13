@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" font-family="-apple-system,Segoe UI,Microsoft YaHei,sans-serif">
+  <defs>
+    <g id="fic">
+      <rect x="0" y="0" width="16" height="20" rx="3" fill="#fff" stroke="#2b6cb0" stroke-width="1.5"/>
+      <path d="M10 0 h6 a0 0 0 0 1 0 0 v6 l-6 -6 z" fill="#2b6cb0"/>
+    </g>
+  </defs>
+  <rect width="800" height="360" fill="#f7fafc"/>
+  <text x="40" y="44" font-size="16" fill="#2d3748" font-weight="700">时光文件 · 按时间自动归集</text>
+  <!-- bars -->
+  <g transform="translate(0,70)">
+    <text x="24" y="22" font-size="14" fill="#2d3748" text-anchor="end">今天</text>
+    <rect x="96" y="6" width="420" height="30" rx="8" fill="#2b6cb0"/>
+    <use href="#fic" x="110" y="11"/><use href="#fic" x="132" y="11"/><use href="#fic" x="154" y="11"/><use href="#fic" x="176" y="11"/>
+  </g>
+  <g transform="translate(0,116)">
+    <text x="24" y="22" font-size="14" fill="#2d3748" text-anchor="end">昨天</text>
+    <rect x="96" y="6" width="360" height="30" rx="8" fill="#3b82c4"/>
+    <use href="#fic" x="110" y="11"/><use href="#fic" x="132" y="11"/><use href="#fic" x="154" y="11"/>
+  </g>
+  <g transform="translate(0,162)">
+    <text x="24" y="22" font-size="14" fill="#2d3748" text-anchor="end">前天</text>
+    <rect x="96" y="6" width="300" height="30" rx="8" fill="#4c9bd1"/>
+    <use href="#fic" x="110" y="11"/><use href="#fic" x="132" y="11"/>
+  </g>
+  <g transform="translate(0,208)">
+    <text x="24" y="22" font-size="14" fill="#2d3748" text-anchor="end">近七天</text>
+    <rect x="96" y="6" width="240" height="30" rx="8" fill="#7bb6e0"/>
+    <use href="#fic" x="110" y="11"/>
+  </g>
+  <g transform="translate(0,254)">
+    <text x="24" y="22" font-size="14" fill="#2d3748" text-anchor="end">早些时候</text>
+    <rect x="96" y="6" width="180" height="30" rx="8" fill="#a9d2ee"/>
+  </g>
+  <text x="560" y="312" font-size="13" fill="#718096">实时刷新 · 无需手动建日期文件夹</text>
+</svg>

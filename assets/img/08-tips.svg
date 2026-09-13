@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" font-family="-apple-system,Segoe UI,Microsoft YaHei,sans-serif">
+  <rect width="800" height="360" fill="#f7fafc"/>
+  <text x="40" y="44" font-size="16" fill="#2d3748" font-weight="700">便捷操作指南（推荐捷径）</text>
+  <g font-size="14" fill="#2d3748">
+    <g transform="translate(40,80)">
+      <circle cx="16" cy="16" r="16" fill="#2b6cb0"/><text x="16" y="21" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+      <text x="46" y="21">鼠标移到左下角 → 自动呼出 / 收起（零点击）</text>
+    </g>
+    <g transform="translate(40,128)">
+      <circle cx="16" cy="16" r="16" fill="#2b6cb0"/><text x="16" y="21" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">2</text>
+      <text x="46" y="21">拖动面板标题栏 → 与其它面板换位</text>
+    </g>
+    <g transform="translate(40,176)">
+      <circle cx="16" cy="16" r="16" fill="#2b6cb0"/><text x="16" y="21" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">3</text>
+      <text x="46" y="21">双击文件夹名 → 进入左右分屏，点左侧退出</text>
+    </g>
+    <g transform="translate(40,224)">
+      <circle cx="16" cy="16" r="16" fill="#2b6cb0"/><text x="16" y="21" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">4</text>
+      <text x="46" y="21">拖入 = 复制，跨面板拖拽 = 移动</text>
+    </g>
+    <g transform="translate(40,272)">
+      <circle cx="16" cy="16" r="16" fill="#2b6cb0"/><text x="16" y="21" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">5</text>
+      <text x="46" y="21">右键 = 系统原生菜单；主菜单一键换肤</text>
+    </g>
+  </g>
+  <rect x="560" y="90" width="180" height="180" rx="16" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="650" y="160" font-size="48" fill="#2b6cb0" text-anchor="middle" font-weight="700">⚡</text>
+  <text x="650" y="210" font-size="14" fill="#2b6cb0" text-anchor="middle" font-weight="700">8 条快捷操作</text>
+  <text x="650" y="234" font-size="12" fill="#4a5568" text-anchor="middle">详见主页第 8 节</text>
+</svg>

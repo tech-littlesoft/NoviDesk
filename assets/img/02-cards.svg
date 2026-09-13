@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" font-family="-apple-system,Segoe UI,Microsoft YaHei,sans-serif">
+  <defs>
+    <g id="card">
+      <rect width="212" height="72" rx="10" fill="#fff" stroke="#e2e8f0" stroke-width="1.5"/>
+      <rect x="14" y="16" width="22" height="16" rx="3" fill="#2b6cb0"/>
+      <path d="M14 32 h22 v-6 a3 3 0 0 0 -3 -3 h-10 a3 3 0 0 0 -3 3 z" fill="#2b6cb0"/>
+      <rect x="46" y="16" width="120" height="9" rx="4" fill="#2d3748"/>
+      <rect x="46" y="32" width="92" height="7" rx="3" fill="#cbd5e0"/>
+      <rect x="46" y="46" width="140" height="7" rx="3" fill="#e2e8f0"/>
+    </g>
+  </defs>
+  <rect width="800" height="360" fill="#f7fafc"/>
+  <text x="40" y="44" font-size="16" fill="#2d3748" font-weight="700">默认 3×3 卡片网格</text>
+  <use href="#card" x="40" y="70"/>
+  <use href="#card" x="270" y="70"/>
+  <use href="#card" x="500" y="70"/>
+  <use href="#card" x="40" y="156"/>
+  <use href="#card" x="270" y="156"/>
+  <use href="#card" x="500" y="156"/>
+  <use href="#card" x="40" y="242"/>
+  <use href="#card" x="270" y="242"/>
+  <use href="#card" x="500" y="242"/>
+  <rect x="270" y="156" width="212" height="72" rx="10" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="2.5"/>
+  <text x="376" y="196" font-size="13" fill="#2b6cb0" text-anchor="middle" font-weight="700">拖动换位 ⇄</text>
+</svg>

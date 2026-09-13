@@ -1,0 +1,17 @@
+# Jekyll 本地构建产物（GitHub Pages 服务端构建，不需要提交）
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# 本地依赖
+Gemfile.lock
+vendor/
+.bundle/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

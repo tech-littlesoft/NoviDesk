@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" font-family="-apple-system,Segoe UI,Microsoft YaHei,sans-serif">
+  <defs>
+    <marker id="st" markerWidth="12" markerHeight="12" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2b6cb0"/></marker>
+    <g id="folder">
+      <rect x="0" y="14" width="64" height="44" rx="6" fill="#2b6cb0"/>
+      <path d="M0 20 a6 6 0 0 1 6 -6 h18 l8 8 h26 a6 6 0 0 1 6 6 v-8 a6 6 0 0 0 -6 -6 h-18 l-8 -8 h-26 a6 6 0 0 0 -6 6 z" fill="#1e4e8c"/>
+    </g>
+  </defs>
+  <rect width="800" height="360" fill="#f7fafc"/>
+  <text x="400" y="40" font-size="16" fill="#2d3748" font-weight="700" text-anchor="middle">设置卡 · 绑定文件夹与单选/多选</text>
+  <!-- settings card -->
+  <rect x="250" y="70" width="300" height="230" rx="14" fill="#fff" stroke="#2b6cb0" stroke-width="2.5"/>
+  <!-- gear -->
+  <circle cx="400" cy="120" r="22" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="2"/>
+  <circle cx="400" cy="120" r="7" fill="#2b6cb0"/>
+  <text x="400" y="172" font-size="14" fill="#2d3748" text-anchor="middle">拖文件夹到此绑定面板</text>
+  <!-- toggle -->
+  <rect x="290" y="210" width="220" height="40" rx="20" fill="#edf2f7"/>
+  <rect x="290" y="210" width="110" height="40" rx="20" fill="#fff" stroke="#cbd5e0" stroke-width="1.5"/>
+  <text x="345" y="235" font-size="13" fill="#718096" text-anchor="middle">单选</text>
+  <rect x="400" y="210" width="110" height="40" rx="20" fill="#2b6cb0"/>
+  <text x="455" y="235" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">多选</text>
+  <!-- incoming folder -->
+  <use href="#folder" x="120" y="150"/>
+  <path d="M190 172 C 220 172, 230 172, 250 172" stroke="#2b6cb0" stroke-width="3" fill="none" marker-end="url(#st)"/>
+  <text x="400" y="316" font-size="13" fill="#718096" text-anchor="middle">单文件夹 / 多文件夹聚合，自由切换</text>
+</svg>

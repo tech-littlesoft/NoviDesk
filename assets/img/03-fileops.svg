@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" font-family="-apple-system,Segoe UI,Microsoft YaHei,sans-serif">
+  <defs>
+    <marker id="cp" markerWidth="12" markerHeight="12" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2b6cb0"/></marker>
+    <marker id="mv" markerWidth="12" markerHeight="12" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#38a169"/></marker>
+    <g id="file">
+      <rect x="0" y="0" width="48" height="60" rx="6" fill="#fff" stroke="#2b6cb0" stroke-width="2"/>
+      <path d="M30 0 h18 a0 0 0 0 1 0 0 v18 l-18 -18 z" fill="#2b6cb0"/>
+      <rect x="10" y="26" width="28" height="5" rx="2" fill="#cbd5e0"/>
+      <rect x="10" y="36" width="20" height="5" rx="2" fill="#cbd5e0"/>
+    </g>
+  </defs>
+  <rect width="800" height="360" fill="#f7fafc"/>
+  <text x="40" y="40" font-size="16" fill="#2d3748" font-weight="700">① 拖入卡片 = 复制</text>
+  <use href="#file" x="80" y="120"/>
+  <path d="M150 150 C 200 150, 210 150, 250 150" stroke="#2b6cb0" stroke-width="3" fill="none" marker-end="url(#cp)"/>
+  <rect x="262" y="86" width="170" height="168" rx="12" fill="#fff" stroke="#cbd5e0" stroke-width="1.5"/>
+  <rect x="290" y="120" width="40" height="30" rx="4" fill="#2b6cb0"/>
+  <path d="M290 150 h40 v-8 a4 4 0 0 0 -4 -4 h-22 a4 4 0 0 0 -4 4 z" fill="#2b6cb0"/>
+  <text x="347" y="172" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="700">复制 +</text>
+  <text x="347" y="200" font-size="13" fill="#718096" text-anchor="middle">放入即复制</text>
+
+  <text x="470" y="40" font-size="16" fill="#2d3748" font-weight="700">② 跨面板拖拽 = 移动</text>
+  <rect x="470" y="86" width="140" height="168" rx="12" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.5"/>
+  <rect x="630" y="86" width="140" height="168" rx="12" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.5"/>
+  <use href="#file" x="520" y="120"/>
+  <path d="M575 150 C 600 150, 600 150, 635 150" stroke="#38a169" stroke-width="3" fill="none" marker-end="url(#mv)"/>
+  <text x="540" y="200" font-size="12" fill="#718096" text-anchor="middle">面板 A</text>
+  <text x="700" y="200" font-size="12" fill="#718096" text-anchor="middle">面板 B</text>
+  <text x="700" y="172" font-size="13" fill="#38a169" text-anchor="middle" font-weight="700">移动 →</text>
+</svg>

@@ -1,0 +1,32 @@
+# NoviDesk 官方主页 — GitHub Pages (Jekyll) 配置
+# 直接 push 到 main 分支，由 GitHub Pages 自动用此配置构建并发布。
+# 不使用任何第三方主题与 CDN，全部用仓库内自定义布局/样式，国内可直连。
+
+title: NoviDesk 桌面工作站
+description: >-
+  NoviDesk 桌面工作站（悬浮桌面 / 小维桌面）官方主页与功能亮点介绍。
+  NoviDesk Desktop Workstation (Floating Desktop / XiaoWei Desktop) — official homepage & feature highlights.
+lang: zh-CN
+
+# 站点地址（当前使用 GitHub Pages 默认域名）
+url: https://tech-littlesoft.github.io
+# 项目站点（project site）根路径：GitHub 自动分配为 https://<user>.github.io/<repo>/
+# 必须加这一行，否则 /assets/css/style.css 会指向域名根而 404，页面白屏
+# 仓库名 = URL 第一段，本仓库名为 NoviDesk
+baseurl: /NoviDesk
+
+# 绑定自有域名后，改成：
+#   url: https://novidesk.com
+#   baseurl: ""
+# 并在仓库根目录放置 CNAME 文件（内容为域名），详见 README.md
+
+# 不使用第三方主题，使用仓库内 _layouts/default.html + assets/css/style.css
+theme: null
+
+# 三页都启用 pretty URL（去掉 .html 后缀），与各页 front matter 的 permalink 配合
+permalink: pretty
+
+# 发布时排除仓库说明文件（不进入站点）
+exclude:
+  - README.md
+  - LICENSE

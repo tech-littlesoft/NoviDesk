@@ -1,0 +1,26 @@
+<nav class="sidebar-nav">
+  <div class="sidebar-section">文档 · Docs</div>
+  <ul>
+    <li>
+      <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">
+        <span class="zh">产品主页</span>
+        <span class="en">Overview</span>
+      </a>
+    </li>
+    <li>
+      <a href="{{ '/guide/' | relative_url }}" class="{% if page.url contains '/guide' %}active{% endif %}">
+        <span class="zh">用户操作指南</span>
+        <span class="en">User Guide</span>
+      </a>
+    </li>
+    <li>
+      <a href="{{ '/buy/' | relative_url }}" class="{% if page.url contains '/buy' %}active{% endif %}">
+        <span class="zh">订购与购买</span>
+        <span class="en">Pricing &amp; Buy</span>
+      </a>
+    </li>
+  </ul>
+  <div class="sidebar-foot">
+    <a href="https://github.com/tech-littlesoft/NoviDesk-Privacy" target="_blank" rel="noopener">隐私说明 ↗</a>
+  </div>
+</nav>

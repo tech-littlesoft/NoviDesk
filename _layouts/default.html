@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'zh-CN' }}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <base href="{{ site.baseurl }}/">
+  <title>{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}" />
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/img/favicon.svg' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="NoviDesk 主页">
+      <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true">
+        <rect x="1"  y="1"  width="10" height="10" rx="3" fill="#ff5d5d"/>
+        <rect x="13" y="1"  width="10" height="10" rx="3" fill="#5dadff"/>
+        <rect x="25" y="1"  width="10" height="10" rx="3" fill="#ffd24a"/>
+        <rect x="1"  y="13" width="10" height="10" rx="3" fill="#57d68d"/>
+        <rect x="13" y="13" width="10" height="10" rx="3" fill="#b88bff"/>
+        <rect x="25" y="13" width="10" height="10" rx="3" fill="#ffd24a"/>
+        <rect x="1"  y="25" width="34" height="10" rx="5" fill="#e2e8f0"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">NoviDesk</span>
+        <span class="brand-sub">悬浮桌面 · 小维桌面</span>
+      </span>
+    </a>
+    <a class="topbar-cta" href="{{ '/buy/' | relative_url }}">获取 Pro</a>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" aria-label="文档导航">
+      {% include sidebar.html %}
+    </aside>
+    <main class="page">
+      {{ content }}
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>© {{ site.time | date: '%Y' }} NoviDesk · 悬浮桌面 / 小维桌面 · <a href="https://github.com/tech-littlesoft/NoviDesk-Docs" target="_blank" rel="noopener">GitHub</a></p>
+  </footer>
+</body>
+</html>
