@@ -20,7 +20,7 @@ wide: true
     <span class="btn-current">当前版本</span>
   </div>
 
-  <div class="pricing-card highlight">
+  <div class="pricing-card">
     <h3>Pro 专业正式版</h3>
     <p class="period">订阅 一年</p>
     <ul class="features">
@@ -32,7 +32,7 @@ wide: true
     <a class="btn" href="https://www.kufaka.com/item/w1fm39" target="_blank" rel="noopener">立即订阅</a>
   </div>
 
-  <div class="pricing-card highlight">
+  <div class="pricing-card">
     <h3>Pro 专业正式版</h3>
     <p class="period">订阅 三年</p>
     <ul class="features">
