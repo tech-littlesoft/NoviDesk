@@ -1,20 +1,119 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" font-family="-apple-system,Segoe UI,Microsoft YaHei,sans-serif">
-  <rect width="800" height="360" fill="#f7fafc"/>
-  <text x="400" y="40" font-size="16" fill="#2d3748" font-weight="700" text-anchor="middle">深 / 浅主题 · 一键切换并记忆</text>
-  <!-- dark panel -->
-  <rect x="120" y="70" width="240" height="220" rx="14" fill="#1a202c" stroke="#2d3748" stroke-width="1.5"/>
-  <circle cx="152" cy="100" r="9" fill="#f6e05e"/>
-  <rect x="180" y="94" width="120" height="12" rx="6" fill="#4a5568"/>
-  <rect x="140" y="130" width="200" height="50" rx="8" fill="#2d3748"/>
-  <rect x="140" y="194" width="200" height="50" rx="8" fill="#2d3748"/>
-  <text x="240" y="312" font-size="14" fill="#4a5568" text-anchor="middle" font-weight="700">深色 Dark</text>
-  <!-- light panel -->
-  <rect x="440" y="70" width="240" height="220" rx="14" fill="#ffffff" stroke="#cbd5e0" stroke-width="1.5"/>
-  <circle cx="472" cy="100" r="9" fill="#f6ad55"/>
-  <rect x="500" y="94" width="120" height="12" rx="6" fill="#2d3748"/>
-  <rect x="460" y="130" width="200" height="50" rx="8" fill="#edf2f7"/>
-  <rect x="460" y="194" width="200" height="50" rx="8" fill="#edf2f7"/>
-  <text x="560" y="312" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="700">浅色 Light</text>
-  <!-- arrow between -->
-  <text x="400" y="186" font-size="26" fill="#2b6cb0" text-anchor="middle" font-weight="700">⇄</text>
+  <!-- 背景：浅 → 深 -->
+  <rect width="800" height="360" fill="#f7fafc">
+    <animate attributeName="fill" values="#f7fafc;#f7fafc;#111111;#111111;#f7fafc" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- 主面板：白 → 深灰 -->
+  <rect x="120" y="48" width="560" height="264" rx="16" stroke-width="2.5">
+    <animate attributeName="fill" values="#ffffff;#ffffff;#1a1a1a;#1a1a1a;#ffffff" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="stroke" values="#cbd5e0;#cbd5e0;#333333;#333333;#cbd5e0" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- 面板头部 -->
+  <rect x="120" y="48" width="560" height="46" rx="16">
+    <animate attributeName="fill" values="#edf2f7;#edf2f7;#1c2a3f;#1c2a3f;#edf2f7" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="144" y="66" width="120" height="12" rx="6">
+    <animate attributeName="fill" values="#2b6cb0;#2b6cb0;#5dadff;#5dadff;#2b6cb0" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- 太阳 / 月亮 图标切换 -->
+  <g transform="translate(608,58)">
+    <!-- 太阳 -->
+    <g>
+      <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0;0;0;0;180" keyTimes="0;0.5;0.8;0.9;1" dur="6s" repeatCount="indefinite"/>
+      <circle cx="13" cy="13" r="7" fill="#ffd24a"/>
+      <g stroke="#ffd24a" stroke-width="2" stroke-linecap="round">
+        <line x1="13" y1="0" x2="13" y2="3"/>
+        <line x1="13" y1="23" x2="13" y2="26"/>
+        <line x1="0" y1="13" x2="3" y2="13"/>
+        <line x1="23" y1="13" x2="26" y2="13"/>
+      </g>
+    </g>
+    <!-- 月亮 -->
+    <g>
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+      <path d="M16 2 a11 11 0 1 0 0 22 a9 9 0 1 1 0 -22 z" fill="#b8c7e0"/>
+    </g>
+  </g>
+
+  <!-- 卡片区：4 张卡片 -->
+  <g>
+    <rect x="148" y="118" width="248" height="80" rx="10" stroke-width="1.5">
+      <animate attributeName="fill" values="#ffffff;#ffffff;#242424;#242424;#ffffff" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="stroke" values="#e2e8f0;#e2e8f0;#3a3a3a;#3a3a3a;#e2e8f0" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="164" y="136" width="22" height="16" rx="3" fill="#2b6cb0"/>
+    <rect x="196" y="136" width="120" height="9" rx="4">
+      <animate attributeName="fill" values="#2d3748;#2d3748;#e8e8e8;#e8e8e8;#2d3748" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="196" y="154" width="160" height="7" rx="3">
+      <animate attributeName="fill" values="#cbd5e0;#cbd5e0;#555555;#555555;#cbd5e0" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="164" y="170" width="140" height="7" rx="3">
+      <animate attributeName="fill" values="#e2e8f0;#e2e8f0;#444444;#444444;#e2e8f0" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <g>
+    <rect x="412" y="118" width="248" height="80" rx="10" stroke-width="1.5">
+      <animate attributeName="fill" values="#ffffff;#ffffff;#242424;#242424;#ffffff" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="stroke" values="#e2e8f0;#e2e8f0;#3a3a3a;#3a3a3a;#e2e8f0" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="428" y="136" width="22" height="16" rx="3" fill="#57d68d"/>
+    <rect x="460" y="136" width="120" height="9" rx="4">
+      <animate attributeName="fill" values="#2d3748;#2d3748;#e8e8e8;#e8e8e8;#2d3748" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="460" y="154" width="160" height="7" rx="3">
+      <animate attributeName="fill" values="#cbd5e0;#cbd5e0;#555555;#555555;#cbd5e0" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="428" y="170" width="140" height="7" rx="3">
+      <animate attributeName="fill" values="#e2e8f0;#e2e8f0;#444444;#444444;#e2e8f0" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <g>
+    <rect x="148" y="212" width="248" height="80" rx="10" stroke-width="1.5">
+      <animate attributeName="fill" values="#ffffff;#ffffff;#242424;#242424;#ffffff" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="stroke" values="#e2e8f0;#e2e8f0;#3a3a3a;#3a3a3a;#e2e8f0" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="164" y="230" width="22" height="16" rx="3" fill="#ffd24a"/>
+    <rect x="196" y="230" width="120" height="9" rx="4">
+      <animate attributeName="fill" values="#2d3748;#2d3748;#e8e8e8;#e8e8e8;#2d3748" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="196" y="248" width="160" height="7" rx="3">
+      <animate attributeName="fill" values="#cbd5e0;#cbd5e0;#555555;#555555;#cbd5e0" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="164" y="264" width="140" height="7" rx="3">
+      <animate attributeName="fill" values="#e2e8f0;#e2e8f0;#444444;#444444;#e2e8f0" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <g>
+    <rect x="412" y="212" width="248" height="80" rx="10" stroke-width="1.5">
+      <animate attributeName="fill" values="#ffffff;#ffffff;#242424;#242424;#ffffff" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="stroke" values="#e2e8f0;#e2e8f0;#3a3a3a;#3a3a3a;#e2e8f0" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="428" y="230" width="22" height="16" rx="3" fill="#b88bff"/>
+    <rect x="460" y="230" width="120" height="9" rx="4">
+      <animate attributeName="fill" values="#2d3748;#2d3748;#e8e8e8;#e8e8e8;#2d3748" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="460" y="248" width="160" height="7" rx="3">
+      <animate attributeName="fill" values="#cbd5e0;#cbd5e0;#555555;#555555;#cbd5e0" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="428" y="264" width="140" height="7" rx="3">
+      <animate attributeName="fill" values="#e2e8f0;#e2e8f0;#444444;#444444;#e2e8f0" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- 标签：浅色主题 / 深色主题 -->
+  <g text-anchor="middle" font-size="14" font-weight="700">
+    <text x="400" y="338" fill="#4a5568">
+      浅色主题
+      <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+    </text>
+    <text x="400" y="338" fill="#b8c7e0">
+      深色主题
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.3;0.5;0.8;1" dur="6s" repeatCount="indefinite"/>
+    </text>
+  </g>
 </svg>

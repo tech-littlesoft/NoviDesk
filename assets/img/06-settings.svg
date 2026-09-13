@@ -1,27 +1,89 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" font-family="-apple-system,Segoe UI,Microsoft YaHei,sans-serif">
-  <defs>
-    <marker id="st" markerWidth="12" markerHeight="12" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2b6cb0"/></marker>
-    <g id="folder">
-      <rect x="0" y="14" width="64" height="44" rx="6" fill="#2b6cb0"/>
-      <path d="M0 20 a6 6 0 0 1 6 -6 h18 l8 8 h26 a6 6 0 0 1 6 6 v-8 a6 6 0 0 0 -6 -6 h-18 l-8 -8 h-26 a6 6 0 0 0 -6 6 z" fill="#1e4e8c"/>
-    </g>
-  </defs>
   <rect width="800" height="360" fill="#f7fafc"/>
-  <text x="400" y="40" font-size="16" fill="#2d3748" font-weight="700" text-anchor="middle">设置卡 · 绑定文件夹与单选/多选</text>
-  <!-- settings card -->
-  <rect x="250" y="70" width="300" height="230" rx="14" fill="#fff" stroke="#2b6cb0" stroke-width="2.5"/>
-  <!-- gear -->
-  <circle cx="400" cy="120" r="22" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="2"/>
-  <circle cx="400" cy="120" r="7" fill="#2b6cb0"/>
-  <text x="400" y="172" font-size="14" fill="#2d3748" text-anchor="middle">拖文件夹到此绑定面板</text>
-  <!-- toggle -->
-  <rect x="290" y="210" width="220" height="40" rx="20" fill="#edf2f7"/>
-  <rect x="290" y="210" width="110" height="40" rx="20" fill="#fff" stroke="#cbd5e0" stroke-width="1.5"/>
-  <text x="345" y="235" font-size="13" fill="#718096" text-anchor="middle">单选</text>
-  <rect x="400" y="210" width="110" height="40" rx="20" fill="#2b6cb0"/>
-  <text x="455" y="235" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">多选</text>
-  <!-- incoming folder -->
-  <use href="#folder" x="120" y="150"/>
-  <path d="M190 172 C 220 172, 230 172, 250 172" stroke="#2b6cb0" stroke-width="3" fill="none" marker-end="url(#st)"/>
-  <text x="400" y="316" font-size="13" fill="#718096" text-anchor="middle">单文件夹 / 多文件夹聚合，自由切换</text>
+
+  <!-- 设置卡 -->
+  <rect x="400" y="72" width="340" height="216" rx="14" fill="#ffffff" stroke="#2b6cb0" stroke-width="2.5"/>
+  <rect x="400" y="72" width="340" height="40" rx="14" fill="#ebf4ff"/>
+  <!-- 齿轮 -->
+  <g transform="translate(422,86)">
+    <circle cx="6" cy="6" r="5" fill="none" stroke="#2b6cb0" stroke-width="2"/>
+    <g stroke="#2b6cb0" stroke-width="2" stroke-linecap="round">
+      <line x1="6" y1="-2" x2="6" y2="1"/>
+      <line x1="6" y1="11" x2="6" y2="14"/>
+      <line x1="-2" y1="6" x2="1" y2="6"/>
+      <line x1="11" y1="6" x2="14" y2="6"/>
+    </g>
+  </g>
+  <text x="448" y="98" font-size="14" fill="#2b6cb0" font-weight="700">设置卡</text>
+
+  <!-- 单选 / 多选分段控件：滑块左右移动 -->
+  <rect x="424" y="130" width="292" height="36" rx="18" fill="#edf2f7"/>
+  <rect x="428" y="134" width="142" height="28" rx="14" fill="#2b6cb0">
+    <animate attributeName="x" values="428;428;574;574;428" keyTimes="0;0.45;0.62;0.85;1" dur="6s" repeatCount="indefinite"/>
+  </rect>
+  <text x="499" y="153" font-size="13" text-anchor="middle" font-weight="600">
+    <animate attributeName="fill" values="#ffffff;#ffffff;#718096;#718096;#ffffff" keyTimes="0;0.45;0.62;0.85;1" dur="6s" repeatCount="indefinite"/>
+    单文件夹
+  </text>
+  <text x="645" y="153" font-size="13" text-anchor="middle" font-weight="600">
+    <animate attributeName="fill" values="#718096;#718096;#ffffff;#ffffff;#718096" keyTimes="0;0.45;0.62;0.85;1" dur="6s" repeatCount="indefinite"/>
+    多文件夹
+  </text>
+
+  <!-- 面板内容随模式变化 -->
+  <!-- 单文件夹模式：1 个内容块 -->
+  <rect x="424" y="184" width="292" height="80" rx="8" fill="#f7fafc" stroke="#cbd5e0">
+    <animate attributeName="opacity" values="1;1;0;0.35;1" keyTimes="0;0.45;0.62;0.85;1" dur="6s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="442" y="204" width="120" height="10" rx="5" fill="#2d3748">
+    <animate attributeName="opacity" values="1;1;0;0.35;1" keyTimes="0;0.45;0.62;0.85;1" dur="6s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="442" y="226" width="200" height="8" rx="4" fill="#cbd5e0">
+    <animate attributeName="opacity" values="1;1;0;0.35;1" keyTimes="0;0.45;0.62;0.85;1" dur="6s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- 多文件夹模式：3 个来源块 -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;0.35;1;1;0" keyTimes="0;0.45;0.62;0.85;1" dur="6s" repeatCount="indefinite"/>
+    <rect x="424" y="184" width="92" height="80" rx="8" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <rect x="524" y="184" width="92" height="80" rx="8" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <rect x="624" y="184" width="92" height="80" rx="8" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="1.5"/>
+    <rect x="440" y="206" width="60" height="8" rx="4" fill="#2b6cb0"/>
+    <rect x="540" y="206" width="60" height="8" rx="4" fill="#2b6cb0"/>
+    <rect x="640" y="206" width="60" height="8" rx="4" fill="#2b6cb0"/>
+    <rect x="440" y="226" width="46" height="6" rx="3" fill="#718096"/>
+    <rect x="540" y="226" width="46" height="6" rx="3" fill="#718096"/>
+    <rect x="640" y="226" width="46" height="6" rx="3" fill="#718096"/>
+  </g>
+
+  <!-- 被拖动的文件夹：从左侧飞入设置卡 -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="0,0; 0,0; 300,24; 300,24; 0,0"
+      keyTimes="0; 0.15; 0.4; 0.85; 1"
+      dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;1;0.15;0.15;1" keyTimes="0;0.15;0.4;0.85;1" dur="6s" repeatCount="indefinite"/>
+    <g transform="translate(80,150)">
+      <path d="M0 16 h64 v-22 a5 5 0 0 0 -5 -5 h-26 a5 5 0 0 0 -5 5 v6 z" fill="#2b6cb0"/>
+      <rect x="0" y="16" width="64" height="46" rx="6" fill="#2b6cb0"/>
+      <rect x="6" y="30" width="40" height="6" rx="3" fill="#fff" opacity="0.7"/>
+      <rect x="6" y="42" width="30" height="6" rx="3" fill="#fff" opacity="0.45"/>
+    </g>
+  </g>
+
+  <!-- 鼠标跟着文件夹走 -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="120,230; 120,230; 420,254; 420,254; 120,230"
+      keyTimes="0; 0.15; 0.4; 0.85; 1"
+      dur="6s" repeatCount="indefinite"/>
+    <path d="M0,0 L0,16 L5,12 L8,18 L11,17 L8,11 L14,11 Z" fill="#2d3748"/>
+  </g>
+
+  <!-- 提示 -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0.16;0.26;0.38;0.46" dur="6s" repeatCount="indefinite"/>
+    <rect x="80" y="72" width="250" height="30" rx="15" fill="#2b6cb0"/>
+    <text x="205" y="92" font-size="14" fill="#fff" text-anchor="middle" font-weight="600">拖文件夹到设置卡</text>
+  </g>
 </svg>

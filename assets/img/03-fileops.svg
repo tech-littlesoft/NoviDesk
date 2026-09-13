@@ -1,30 +1,62 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" font-family="-apple-system,Segoe UI,Microsoft YaHei,sans-serif">
-  <defs>
-    <marker id="cp" markerWidth="12" markerHeight="12" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2b6cb0"/></marker>
-    <marker id="mv" markerWidth="12" markerHeight="12" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#38a169"/></marker>
-    <g id="file">
-      <rect x="0" y="0" width="48" height="60" rx="6" fill="#fff" stroke="#2b6cb0" stroke-width="2"/>
-      <path d="M30 0 h18 a0 0 0 0 1 0 0 v18 l-18 -18 z" fill="#2b6cb0"/>
-      <rect x="10" y="26" width="28" height="5" rx="2" fill="#cbd5e0"/>
-      <rect x="10" y="36" width="20" height="5" rx="2" fill="#cbd5e0"/>
-    </g>
-  </defs>
   <rect width="800" height="360" fill="#f7fafc"/>
-  <text x="40" y="40" font-size="16" fill="#2d3748" font-weight="700">① 拖入卡片 = 复制</text>
-  <use href="#file" x="80" y="120"/>
-  <path d="M150 150 C 200 150, 210 150, 250 150" stroke="#2b6cb0" stroke-width="3" fill="none" marker-end="url(#cp)"/>
-  <rect x="262" y="86" width="170" height="168" rx="12" fill="#fff" stroke="#cbd5e0" stroke-width="1.5"/>
-  <rect x="290" y="120" width="40" height="30" rx="4" fill="#2b6cb0"/>
-  <path d="M290 150 h40 v-8 a4 4 0 0 0 -4 -4 h-22 a4 4 0 0 0 -4 4 z" fill="#2b6cb0"/>
-  <text x="347" y="172" font-size="14" fill="#2d3748" text-anchor="middle" font-weight="700">复制 +</text>
-  <text x="347" y="200" font-size="13" fill="#718096" text-anchor="middle">放入即复制</text>
 
-  <text x="470" y="40" font-size="16" fill="#2d3748" font-weight="700">② 跨面板拖拽 = 移动</text>
-  <rect x="470" y="86" width="140" height="168" rx="12" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.5"/>
-  <rect x="630" y="86" width="140" height="168" rx="12" fill="#f7fafc" stroke="#cbd5e0" stroke-width="1.5"/>
-  <use href="#file" x="520" y="120"/>
-  <path d="M575 150 C 600 150, 600 150, 635 150" stroke="#38a169" stroke-width="3" fill="none" marker-end="url(#mv)"/>
-  <text x="540" y="200" font-size="12" fill="#718096" text-anchor="middle">面板 A</text>
-  <text x="700" y="200" font-size="12" fill="#718096" text-anchor="middle">面板 B</text>
-  <text x="700" y="172" font-size="13" fill="#38a169" text-anchor="middle" font-weight="700">移动 →</text>
+  <!-- 左侧源卡片 A -->
+  <rect x="80" y="100" width="240" height="180" rx="12" fill="#ffffff" stroke="#cbd5e0" stroke-width="2"/>
+  <rect x="80" y="100" width="240" height="32" rx="12" fill="#edf2f7"/>
+  <rect x="100" y="112" width="80" height="8" rx="4" fill="#2d3748"/>
+  <rect x="120" y="148" width="160" height="22" rx="4" fill="#e2e8f0"/>
+  <rect x="120" y="180" width="160" height="22" rx="4" fill="#e2e8f0"/>
+  <rect x="120" y="212" width="160" height="22" rx="4" fill="#e2e8f0"/>
+
+  <!-- 右侧目标卡片 B -->
+  <rect x="480" y="100" width="240" height="180" rx="12" fill="#ffffff" stroke="#cbd5e0" stroke-width="2"/>
+  <rect x="480" y="100" width="240" height="32" rx="12" fill="#edf2f7"/>
+  <rect x="500" y="112" width="80" height="8" rx="4" fill="#2d3748"/>
+  <rect x="500" y="148" width="200" height="42" rx="6" fill="#f7fafc" stroke="#cbd5e0"/>
+
+  <!-- 待拖动文件：高亮边框，随箭头飞过去 -->
+  <rect x="120" y="148" width="160" height="22" rx="4" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="1.5">
+    <animate attributeName="opacity" values="1;1;0.2;0.2;1" keyTimes="0;0.15;0.3;0.85;1" dur="6.4s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- 飞动的小图标：从 A 到 B（移动示意） -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="200,159; 200,159; 600,170; 600,170"
+      keyTimes="0; 0.15; 0.5; 1"
+      dur="6.4s" repeatCount="indefinite"/>
+    <rect width="120" height="20" rx="4" fill="#2b6cb0" opacity="0.85"/>
+    <rect x="6" y="6" width="10" height="8" rx="2" fill="#fff" opacity="0.9"/>
+  </g>
+
+  <!-- 复制弧线：从 A 到 B 顶部（虚线，标示复制语义） -->
+  <path d="M 260 130 Q 400 70 540 130" fill="none" stroke="#2b6cb0" stroke-width="2.5" stroke-dasharray="6 6" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.12;0.25;0.45;0.55" dur="6.4s" repeatCount="indefinite"/>
+  </path>
+  <path d="M 540 130 L 530 124 L 530 136 Z" fill="#2b6cb0" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.12;0.25;0.45;0.55" dur="6.4s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- 鼠标：先在 A 上抓文件，然后飞到 B -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="220,160; 220,160; 580,170; 580,170; 220,160"
+      keyTimes="0; 0.18; 0.48; 0.62; 1"
+      dur="6.4s" repeatCount="indefinite"/>
+    <path d="M0,0 L0,16 L5,12 L8,18 L11,17 L8,11 L14,11 Z" fill="#2d3748"/>
+  </g>
+
+  <!-- 标签：拖入 = 复制 -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0.15;0.25;0.45;0.55" dur="6.4s" repeatCount="indefinite"/>
+    <rect x="320" y="60" width="160" height="28" rx="14" fill="#2b6cb0"/>
+    <text x="400" y="79" font-size="14" fill="#fff" text-anchor="middle" font-weight="600">拖入 = 复制</text>
+  </g>
+  <!-- 标签：跨面板 = 移动 -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0.6;0.68;0.88;0.95" dur="6.4s" repeatCount="indefinite"/>
+    <rect x="320" y="294" width="160" height="28" rx="14" fill="#2b6cb0"/>
+    <text x="400" y="313" font-size="14" fill="#fff" text-anchor="middle" font-weight="600">跨面板 = 移动</text>
+  </g>
 </svg>

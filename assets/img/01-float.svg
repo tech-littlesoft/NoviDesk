@@ -1,17 +1,42 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" font-family="-apple-system,Segoe UI,Microsoft YaHei,sans-serif">
+  <!-- 桌面窗口 -->
   <rect width="800" height="360" fill="#f7fafc"/>
   <rect x="40" y="24" width="720" height="312" rx="16" fill="#ffffff" stroke="#cbd5e0" stroke-width="2"/>
-  <circle cx="72" cy="306" r="18" fill="#2b6cb0" opacity="0.12"/>
-  <circle cx="72" cy="306" r="8" fill="#2b6cb0"/>
-  <text x="72" y="342" font-size="13" fill="#718096" text-anchor="middle">左下角热区</text>
-  <g transform="translate(72,64)">
+
+  <!-- 触发角光晕（脉冲） -->
+  <circle cx="80" cy="296" r="18" fill="#2b6cb0" opacity="0.18">
+    <animate attributeName="r" values="14;26;14" dur="2.4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.28;0.04;0.28" dur="2.4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="80" cy="296" r="7" fill="#2b6cb0"/>
+
+  <!-- 工作台面板：从左侧滑入，停留，再收回 -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="-360,64; -360,64; 130,64; 130,64; -360,64"
+      keyTimes="0; 0.08; 0.32; 0.72; 1"
+      dur="4.8s" repeatCount="indefinite"
+      calcMode="spline" keySplines="0 0 1 1; 0.16 0.84 0.32 1; 0 0 1 1; 0.5 0 0.84 0"/>
     <rect width="300" height="232" rx="14" fill="#ffffff" stroke="#2b6cb0" stroke-width="2.5"/>
     <rect x="18" y="18" width="130" height="14" rx="7" fill="#2b6cb0"/>
     <rect x="18" y="50" width="264" height="56" rx="10" fill="#edf2f7"/>
     <rect x="18" y="118" width="264" height="56" rx="10" fill="#edf2f7"/>
     <rect x="18" y="186" width="170" height="14" rx="7" fill="#cbd5e0"/>
   </g>
-  <defs><marker id="ar1" markerWidth="12" markerHeight="12" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#2b6cb0"/></marker></defs>
-  <line x1="34" y1="180" x2="66" y2="180" stroke="#2b6cb0" stroke-width="3" marker-end="url(#ar1)"/>
-  <text x="448" y="322" font-size="15" fill="#4a5568" text-anchor="middle">鼠标移到角落 → 工作台从边缘滑出（约 0.5s）</text>
+
+  <!-- 鼠标：从桌面中央移到角落，停留，再移开 -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="440,180; 76,290; 76,290; 440,180"
+      keyTimes="0; 0.18; 0.62; 0.78"
+      dur="4.8s" repeatCount="indefinite"/>
+    <path d="M0,0 L0,16 L5,12 L8,18 L11,17 L8,11 L14,11 Z" fill="#2d3748"/>
+  </g>
+
+  <!-- 引导箭头（滑入时短暂显示） -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1;0" keyTimes="0.1;0.22;0.36" dur="4.8s" repeatCount="indefinite"/>
+    <line x1="100" y1="180" x2="430" y2="180" stroke="#2b6cb0" stroke-width="3" stroke-dasharray="6 6"/>
+    <path d="M430,180 L420,174 L420,186 Z" fill="#2b6cb0"/>
+  </g>
 </svg>

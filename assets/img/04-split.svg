@@ -1,24 +1,74 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" font-family="-apple-system,Segoe UI,Microsoft YaHei,sans-serif">
   <rect width="800" height="360" fill="#f7fafc"/>
-  <rect x="60" y="40" width="680" height="280" rx="14" fill="#fff" stroke="#cbd5e0" stroke-width="2"/>
-  <rect x="60" y="40" width="680" height="42" rx="14" fill="#edf2f7"/>
-  <rect x="60" y="68" width="680" height="14" fill="#edf2f7"/>
-  <text x="78" y="67" font-size="14" fill="#4a5568">文档 › 项目 › 设计</text>
-  <!-- divider -->
-  <line x1="287" y1="82" x2="287" y2="320" stroke="#cbd5e0" stroke-width="2"/>
-  <!-- left list -->
-  <rect x="78" y="100" width="180" height="26" rx="6" fill="#ebf4ff"/>
-  <rect x="78" y="138" width="180" height="26" rx="6" fill="#f1f5f9"/>
-  <rect x="78" y="176" width="180" height="26" rx="6" fill="#f1f5f9"/>
-  <rect x="78" y="214" width="180" height="26" rx="6" fill="#f1f5f9"/>
-  <rect x="78" y="252" width="180" height="26" rx="6" fill="#f1f5f9"/>
-  <text x="78" y="306" font-size="12" fill="#718096">点击左侧区域退出分屏</text>
-  <!-- right preview -->
-  <rect x="307" y="100" width="410" height="206" rx="10" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1.5"/>
-  <rect x="330" y="124" width="160" height="120" rx="8" fill="#cbd5e0"/>
-  <rect x="510" y="124" width="180" height="14" rx="7" fill="#2d3748"/>
-  <rect x="510" y="150" width="180" height="10" rx="5" fill="#cbd5e0"/>
-  <rect x="510" y="170" width="140" height="10" rx="5" fill="#cbd5e0"/>
-  <rect x="330" y="260" width="370" height="10" rx="5" fill="#e2e8f0"/>
-  <text x="400" y="34" font-size="15" fill="#2d3748" text-anchor="middle" font-weight="700">双击文件夹名 → 左右分屏</text>
+
+  <!-- 整体面板：从窄到宽展开 -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="200,40; 200,40; 60,40; 60,40; 200,40"
+      keyTimes="0; 0.15; 0.4; 0.7; 1"
+      dur="5.6s" repeatCount="indefinite"
+      calcMode="spline" keySplines="0 0 1 1; 0.16 0.84 0.32 1; 0 0 1 1; 0.5 0 0.84 0"/>
+
+    <!-- 面板外框 -->
+    <rect width="380" height="280" rx="14" fill="#ffffff" stroke="#2b6cb0" stroke-width="2.5"/>
+    <!-- 顶部相对路径 -->
+    <rect x="14" y="14" width="200" height="10" rx="5" fill="#cbd5e0"/>
+    <rect x="14" y="14" width="120" height="10" rx="5" fill="#2b6cb0">
+      <animate attributeName="width" values="40;40;200;200;40" keyTimes="0;0.15;0.45;0.7;1" dur="5.6s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- 分屏竖线 -->
+    <line x1="190" y1="40" x2="190" y2="266" stroke="#cbd5e0" stroke-width="2" opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.4;0.5;0.7;1" dur="5.6s" repeatCount="indefinite"/>
+    </line>
+
+    <!-- 左侧：导航（3 个文件夹条目） -->
+    <g>
+      <rect x="14" y="40" width="166" height="44" rx="6" fill="#edf2f7"/>
+      <rect x="14" y="92" width="166" height="44" rx="6" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="1.5"/>
+      <rect x="14" y="144" width="166" height="44" rx="6" fill="#edf2f7"/>
+      <rect x="28" y="58" width="100" height="8" rx="4" fill="#2d3748"/>
+      <rect x="28" y="110" width="100" height="8" rx="4" fill="#2b6cb0"/>
+      <rect x="28" y="162" width="100" height="8" rx="4" fill="#2d3748"/>
+    </g>
+
+    <!-- 右侧：预览区（展开后才出现） -->
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.55;0.7;1" dur="5.6s" repeatCount="indefinite"/>
+      <rect x="206" y="40" width="160" height="226" rx="8" fill="#f7fafc" stroke="#cbd5e0"/>
+      <rect x="220" y="60" width="132" height="80" rx="6" fill="#e2e8f0"/>
+      <rect x="220" y="156" width="100" height="8" rx="4" fill="#2d3748"/>
+      <rect x="220" y="176" width="80" height="6" rx="3" fill="#cbd5e0"/>
+      <rect x="220" y="190" width="120" height="6" rx="3" fill="#cbd5e0"/>
+    </g>
+  </g>
+
+  <!-- 待双击的文件夹名（高亮脉冲） -->
+  <g>
+    <rect x="180" y="200" width="120" height="22" rx="4" fill="#2b6cb0" opacity="0.0">
+      <animate attributeName="opacity" values="0;0.0;0.25;0.25;0" keyTimes="0;0.18;0.28;0.4;0.5" dur="5.6s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- 鼠标：移到文件夹名上，双击 -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="560,290; 560,290; 230,212; 230,212; 560,290"
+      keyTimes="0; 0.2; 0.32; 0.42; 1"
+      dur="5.6s" repeatCount="indefinite"/>
+    <path d="M0,0 L0,16 L5,12 L8,18 L11,17 L8,11 L14,11 Z" fill="#2d3748"/>
+  </g>
+
+  <!-- 双击波纹（两次） -->
+  <circle cx="244" cy="220" r="0" fill="none" stroke="#2b6cb0" stroke-width="2" opacity="0">
+    <animate attributeName="r" values="0;0;14;14;26;26;0" keyTimes="0;0.32;0.36;0.4;0.44;0.5;0.55" dur="5.6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;0;1;0;0" keyTimes="0;0.32;0.36;0.4;0.44;0.5;0.55" dur="5.6s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- 提示 -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0.4;0.5;0.68;0.78" dur="5.6s" repeatCount="indefinite"/>
+    <rect x="490" y="60" width="220" height="28" rx="14" fill="#2b6cb0"/>
+    <text x="600" y="79" font-size="14" fill="#fff" text-anchor="middle" font-weight="600">双击名称 → 左右分屏</text>
+  </g>
 </svg>

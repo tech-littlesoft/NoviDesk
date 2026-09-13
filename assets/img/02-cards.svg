@@ -1,25 +1,81 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" font-family="-apple-system,Segoe UI,Microsoft YaHei,sans-serif">
   <defs>
     <g id="card">
-      <rect width="212" height="72" rx="10" fill="#fff" stroke="#e2e8f0" stroke-width="1.5"/>
-      <rect x="14" y="16" width="22" height="16" rx="3" fill="#2b6cb0"/>
-      <path d="M14 32 h22 v-6 a3 3 0 0 0 -3 -3 h-10 a3 3 0 0 0 -3 3 z" fill="#2b6cb0"/>
-      <rect x="46" y="16" width="120" height="9" rx="4" fill="#2d3748"/>
-      <rect x="46" y="32" width="92" height="7" rx="3" fill="#cbd5e0"/>
-      <rect x="46" y="46" width="140" height="7" rx="3" fill="#e2e8f0"/>
+      <rect width="180" height="64" rx="10" fill="#fff" stroke="#e2e8f0" stroke-width="1.5"/>
+      <rect x="12" y="14" width="22" height="16" rx="3" fill="#2b6cb0"/>
+      <path d="M12 30 h22 v-6 a3 3 0 0 0 -3 -3 h-10 a3 3 0 0 0 -3 3 z" fill="#2b6cb0"/>
+      <rect x="44" y="14" width="100" height="8" rx="3" fill="#2d3748"/>
+      <rect x="44" y="28" width="78" height="6" rx="3" fill="#cbd5e0"/>
+      <rect x="44" y="40" width="120" height="6" rx="3" fill="#e2e8f0"/>
+    </g>
+    <g id="cardBody">
+      <rect x="12" y="14" width="22" height="16" rx="3" fill="#2b6cb0"/>
+      <path d="M12 30 h22 v-6 a3 3 0 0 0 -3 -3 h-10 a3 3 0 0 0 -3 3 z" fill="#2b6cb0"/>
+      <rect x="44" y="14" width="100" height="8" rx="3" fill="#2d3748"/>
+      <rect x="44" y="28" width="78" height="6" rx="3" fill="#cbd5e0"/>
+      <rect x="44" y="40" width="120" height="6" rx="3" fill="#e2e8f0"/>
     </g>
   </defs>
+
   <rect width="800" height="360" fill="#f7fafc"/>
-  <text x="40" y="44" font-size="16" fill="#2d3748" font-weight="700">默认 3×3 卡片网格</text>
-  <use href="#card" x="40" y="70"/>
-  <use href="#card" x="270" y="70"/>
-  <use href="#card" x="500" y="70"/>
-  <use href="#card" x="40" y="156"/>
-  <use href="#card" x="270" y="156"/>
-  <use href="#card" x="500" y="156"/>
-  <use href="#card" x="40" y="242"/>
-  <use href="#card" x="270" y="242"/>
-  <use href="#card" x="500" y="242"/>
-  <rect x="270" y="156" width="212" height="72" rx="10" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="2.5"/>
-  <text x="376" y="196" font-size="13" fill="#2b6cb0" text-anchor="middle" font-weight="700">拖动换位 ⇄</text>
+
+  <!-- 3×3 网格中的静态卡片 -->
+  <use href="#card" x="500" y="80"/>
+  <use href="#card" x="500" y="160"/>
+  <use href="#card" x="500" y="240"/>
+  <use href="#card" x="320" y="160"/>
+  <use href="#card" x="320" y="240"/>
+  <use href="#card" x="140" y="160"/>
+  <use href="#card" x="140" y="240"/>
+
+  <!-- 被拖动的两张卡片：高亮 → 互换位置（内联以保证描边动画生效） -->
+  <g transform="translate(140,80)">
+    <g>
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; 0,0; 180,0; 180,0; 0,0"
+        keyTimes="0; 0.15; 0.5; 0.85; 1"
+        dur="5.6s" repeatCount="indefinite"
+        calcMode="spline" keySplines="0 0 1 1; 0.3 0 0.2 1; 0 0 1 1; 0.3 0 0.2 1"/>
+      <rect width="180" height="64" rx="10" fill="#fff" stroke="#e2e8f0" stroke-width="1.5">
+        <animate attributeName="stroke" values="#e2e8f0;#2b6cb0;#2b6cb0;#2b6cb0;#e2e8f0" keyTimes="0;0.1;0.5;0.85;1" dur="5.6s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-width" values="1.5;2.5;2.5;2.5;1.5" keyTimes="0;0.1;0.5;0.85;1" dur="5.6s" repeatCount="indefinite"/>
+      </rect>
+      <use href="#cardBody"/>
+    </g>
+  </g>
+  <g transform="translate(320,80)">
+    <g>
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0; 0,0; -180,0; -180,0; 0,0"
+        keyTimes="0; 0.15; 0.5; 0.85; 1"
+        dur="5.6s" repeatCount="indefinite"
+        calcMode="spline" keySplines="0 0 1 1; 0.3 0 0.2 1; 0 0 1 1; 0.3 0 0.2 1"/>
+      <rect width="180" height="64" rx="10" fill="#fff" stroke="#e2e8f0" stroke-width="1.5">
+        <animate attributeName="stroke" values="#e2e8f0;#2b6cb0;#2b6cb0;#2b6cb0;#e2e8f0" keyTimes="0;0.1;0.5;0.85;1" dur="5.6s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-width" values="1.5;2.5;2.5;2.5;1.5" keyTimes="0;0.1;0.5;0.85;1" dur="5.6s" repeatCount="indefinite"/>
+      </rect>
+      <use href="#cardBody"/>
+    </g>
+  </g>
+
+  <!-- 鼠标：抓取 → 拖到对面 → 松手 → 移出 -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="600,300; 220,112; 400,112; 220,112; 400,112; 600,300"
+      keyTimes="0; 0.1; 0.5; 0.7; 0.85; 1"
+      dur="5.6s" repeatCount="indefinite"/>
+    <path d="M0,0 L0,16 L5,12 L8,18 L11,17 L8,11 L14,11 Z" fill="#2d3748"/>
+  </g>
+
+  <!-- 提示标签 -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.12;0.5;0.62;1" dur="5.6s" repeatCount="indefinite"/>
+    <rect x="230" y="40" width="180" height="30" rx="15" fill="#2b6cb0"/>
+    <text x="320" y="60" font-size="14" fill="#fff" text-anchor="middle" font-weight="600">拖动标题栏互换</text>
+  </g>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.5;0.6;0.82;0.92" dur="5.6s" repeatCount="indefinite"/>
+    <rect x="230" y="318" width="180" height="30" rx="15" fill="#2b6cb0"/>
+    <text x="320" y="338" font-size="14" fill="#fff" text-anchor="middle" font-weight="600">松开即完成换位</text>
+  </g>
 </svg>
