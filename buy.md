@@ -32,8 +32,8 @@ wide: true
     <p class="period">订阅 一年</p>
 
     <div class="price">
-      <span class="price-tag">首年试用优惠</span>
-      <span class="price-num">限时 <b>29.9</b> RMB</span>
+      <span class="price-tag">官方基准价 · Base price <s>89.9</s> RMB</span>
+      <span class="price-num">限时 <b>29</b><span class="dec">.9</span> RMB</span>
       <span class="price-note">官方限时补贴，仅需一杯咖啡的价钱<span class="price-note-en">Just a cup of coffee for a whole year</span></span>
     </div>
 
@@ -52,8 +52,8 @@ wide: true
     <p class="period">订阅 三年</p>
 
     <div class="price">
-      <span class="price-tag">官方基准价 · Base price <s>389.7</s> RMB</span>
-      <span class="price-num">限时 <b>99</b> RMB</span>
+      <span class="price-tag">官方基准价 · Base price <s>269.7</s> RMB</span>
+      <span class="price-num">限时 <b>79</b><span class="dec">.9</span> RMB</span>
       <span class="price-note">每月仅需一瓶水的支出<span class="price-note-en">Less than a bottle of water per month</span></span>
     </div>
 

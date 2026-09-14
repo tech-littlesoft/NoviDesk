@@ -152,7 +152,8 @@ body.wide-page .site-footer { max-width:1200px; }
 .pricing-card .price-tag { display:block; min-height:18px; font-size:12px; font-weight:700; color:var(--brand); }
 .pricing-card .price-tag s { color:var(--muted); font-weight:600; }
 .pricing-card .price-num { display:block; margin-top:4px; font-size:14px; color:var(--muted); }
-.pricing-card .price-num b { font-size:34px; font-weight:800; color:var(--brand); letter-spacing:-.5px; }
+.pricing-card .price-num b { font-size:38px; font-weight:800; color:var(--brand); letter-spacing:-1px; }
+.pricing-card .price-num .dec { font-size:20px; font-weight:800; color:var(--brand); letter-spacing:0; }
 .pricing-card .price-note { display:block; min-height:36px; margin-top:4px; font-size:12px; color:var(--muted); line-height:1.6; }
 .pricing-card .price-note-en { display:block; font-size:11px; line-height:1.5; opacity:.8; }
 .pricing-card .features { list-style:none; padding:0; margin:0 0 22px; font-size:14px; color:var(--ink); text-align:left; flex:1; }
@@ -185,7 +186,8 @@ body.wide-page .site-footer { max-width:1200px; }
   .pricing-card:hover .btn,
   .pricing-card:focus-within .btn { background:var(--brand); color:#fff; border-color:var(--brand); }
   .pricing-card .price-tag,
-  .pricing-card .price-num b { color:#7fb3e8; }
+  .pricing-card .price-num b,
+  .pricing-card .price-num .dec { color:#7fb3e8; }
   .pricing-card .price,
   .pricing-card .features li { border-color:#333; }
   .cta-note { color:var(--ink); }
