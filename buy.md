@@ -13,6 +13,13 @@ wide: true
   <div class="pricing-card">
     <h3>基础版</h3>
     <p class="period">个人免费</p>
+
+    <div class="price">
+      <span class="price-tag">永久免费</span>
+      <span class="price-num"><b>0</b> RMB</span>
+      <span class="price-note">基础功能开箱即用<span class="price-note-en">Free forever, no payment required</span></span>
+    </div>
+
     <ul class="features">
       <li>全套编辑与办公效率</li>
       <li>5 个卡片面板上限</li>
@@ -27,7 +34,7 @@ wide: true
     <div class="price">
       <span class="price-tag">首年试用优惠</span>
       <span class="price-num">限时 <b>29.9</b> RMB</span>
-      <span class="price-note">官方限时补贴，仅需一杯咖啡的价钱</span>
+      <span class="price-note">官方限时补贴，仅需一杯咖啡的价钱<span class="price-note-en">Just a cup of coffee for a whole year</span></span>
     </div>
 
     <ul class="features">
@@ -45,9 +52,9 @@ wide: true
     <p class="period">订阅 三年</p>
 
     <div class="price">
-      <span class="price-tag">首年试用优惠</span>
-      <span class="price-num">限时 <b>29.9</b> RMB</span>
-      <span class="price-note">官方限时补贴，仅需一杯咖啡的价钱</span>
+      <span class="price-tag">官方基准价 · Base price <s>389.7</s> RMB</span>
+      <span class="price-num">限时 <b>99</b> RMB</span>
+      <span class="price-note">每月仅需一瓶水的支出<span class="price-note-en">Less than a bottle of water per month</span></span>
     </div>
 
     <ul class="features">
@@ -61,4 +68,4 @@ wide: true
   </div>
 </div>
 
-<p class="cta-note">官方限时补贴 · 一杯咖啡的价钱 · 订阅后立即解锁全部能力</p>
+<p class="cta-note">官方限时补贴 · 一杯咖啡起 · 订阅后立即解锁全部能力</p>
