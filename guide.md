@@ -13,8 +13,8 @@ toc: true
 
 ## 1. 安装与首次启动 <span class="en">Install &amp; First Launch</span>
 
-<p class="zh">从 GitHub Releases 下载最新安装包，双击按提示完成安装。首次启动时，应用会以默认设置出现在屏幕左下角，整个真实桌面保持干净——不占任务栏、不抢焦点。</p>
-<p class="en">Grab the latest installer from GitHub Releases and follow the prompts. On first launch, the workspace appears at the bottom-left corner with default settings — no taskbar clutter, no stolen focus.</p>
+<p class="zh">从微软应用商店下载最新安装包，双击按提示完成安装。首次启动时，应用会以默认设置出现在屏幕左下角，整个真实桌面保持干净——不占任务栏、不抢焦点。</p>
+<p class="en">Grab the latest installer from microsoft store Releases and follow the prompts. On first launch, the workspace appears at the bottom-left corner with default settings — no taskbar clutter, no stolen focus.</p>
 
 <blockquote>
   <p class="zh">Windows 首次运行时若出现 SmartScreen 提示，点「更多信息 → 仍要运行」即可。</p>

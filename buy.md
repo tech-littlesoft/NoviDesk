@@ -33,8 +33,8 @@ wide: true
 
     <div class="price">
       <span class="price-tag">官方基准价 · Base price <s>89.9</s> RMB</span>
-      <span class="price-num">限时 <b>29</b><span class="dec">.9</span> RMB</span>
-      <span class="price-note">官方限时补贴，仅需一杯咖啡的价钱<span class="price-note-en">Just a cup of coffee for a whole year</span></span>
+      <span class="price-num">首年优惠 限时 <b>29</b><span class="dec">.9</span> RMB</span>
+      <span class="price-note">官方限时补贴，一年仅需一杯咖啡的价钱<span class="price-note-en">Just a cup of coffee for a whole year</span></span>
     </div>
 
     <ul class="features">
