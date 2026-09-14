@@ -230,8 +230,8 @@ toc: true
   </li>
   <li>
     <b>离线激活 Pro</b>
-    <p class="zh">Pro 通过离线激活码开启，不连接任何服务器，隐私零外泄。详见 <a href="{{ '/buy/' | relative_url }}">升级 Pro</a>。</p>
-    <p class="en">Pro unlocks via an offline activation code — no server contact, nothing leaves your machine. See <a href="{{ '/buy/' | relative_url }}">Upgrade to Pro</a>.</p>
+    <p class="zh">Pro 通过离线激活码开启，不连接任何服务器，隐私零外泄。激活步骤详见 <a href="{{ '/activate/' | relative_url }}">激活与订阅</a>。</p>
+    <p class="en">Pro unlocks via an offline activation code — no server contact, nothing leaves your machine. See <a href="{{ '/activate/' | relative_url }}">Activation</a> for the steps.</p>
   </li>
 </ul>
 
